@@ -10,7 +10,6 @@ def is_valid(s):
     max = int(m.group(2))
     char = m.group(3)
     password = m.group(4)
-    print("{0} ==> {1}".format(s, (password[min-1] == char) ^ (password[max-1] == char)))
     return (password[min-1] == char) ^ (password[max-1] == char)
 
 with open("input.txt") as f:
