@@ -11,13 +11,12 @@ pattern_pid = re.compile(r'^\d{9}$')
 with open('input.txt') as f:
     # Do a lil stringy dance so we can eval the inputs as dicts:
     a = f.read().strip()
-    a = "{'" + a.replace("\n\n", "'}|{'") + "'}"
+    a = "{'" + a.replace("\n\n", "'},{'") + "'}"
     a = a.replace("\n", " ")
     a = a.replace(" ", "','")
     a = a.replace(":", "':'")
-    lines = a.split("|")
     
-    passports = [literal_eval(line) for line in lines]
+    passports = literal_eval(a)
     valids = 0
 
     for pp in passports:
