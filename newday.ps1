@@ -15,4 +15,6 @@ New-Item -Path "Part1.py" -ItemType "file"
 New-Item -Path "Part2.py" -ItemType "file"
 New-Item -Path "input.txt" -ItemType "file"
 
+Add-Content -Path "*.py" -Value "with open('input.txt') as f:"
+
 Set-Location ".."
